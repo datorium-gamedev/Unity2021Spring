@@ -6,7 +6,7 @@ public class MovementScript : MonoBehaviour
 {
     public int playerSpeed = 1;
     private float turnSpeed = 1.53453453453450f;
-    protected bool canMove = false;
+    public bool canMove = false;
 
     public bool onGround = true;
     public float YForce = 20f;
@@ -30,7 +30,7 @@ void Update()
         if(Input.GetButtonDown("Jump") && onGround == true)
         {
             playerRigid.AddForce(new Vector3(0, YForce, 0), ForceMode.Impulse);
-            //onGround = false;
+            onGround = false;
         }
 
 
